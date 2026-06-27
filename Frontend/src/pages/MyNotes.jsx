@@ -28,7 +28,7 @@ localStorage.getItem("user")
 
 
   const res = await axios.get(
-    `http://localhost:5000/api/notes/${user.email}`
+    `https://gnapika-backend.onrender.com/api/notes/${user.email}`
   );
 
   setNotes(res.data);
@@ -47,7 +47,7 @@ localStorage.getItem("user")
 
 
   const res = await axios.get(
-    `http://localhost:5000/api/categories/${user.email}`
+    `https://gnapika-backend.onrender.com/api/categories/${user.email}`
   );
 
   setCategories(res.data);
@@ -77,7 +77,7 @@ const handleDeleteCategory = async (
   try {
 
     await axios.delete(
-      `http://localhost:5000/api/categories/${id}`
+      `https://gnapika-backend.onrender.com/api/categories/${id}`
     );
 
     await fetchCategories();
@@ -120,7 +120,7 @@ const handleCreateCategory = async () => {
     );
 
     await axios.post(
-      "http://localhost:5000/api/categories",
+      "https://gnapika-backend.onrender.com/api/categories",
       {
         name: newCategory,
         userEmail: user.email,
@@ -157,7 +157,7 @@ const handleAddNote = async () => {
 
     if (editId) {
       const res = await axios.put(
-        `http://localhost:5000/api/notes/${editId}`,
+        `https://gnapika-backend.onrender.com/api/notes/${editId}`,
         {
           title,
           description: content,
@@ -176,7 +176,7 @@ const handleAddNote = async () => {
       setEditId(null);
     } else {
       const res = await axios.post(
-        "http://localhost:5000/api/notes",
+        "https://gnapika-backend.onrender.com/api/notes",
         {
           title,
           description: content,
@@ -221,7 +221,7 @@ const handleDelete = async (id) => {
   try {
 
     await axios.delete(
-      `http://localhost:5000/api/notes/${id}`
+      `https://gnapika-backend.onrender.com/api/notes/${id}`
     );
 
     setNotes((prevNotes) =>

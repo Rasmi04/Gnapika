@@ -29,7 +29,7 @@ function ChangePassword() {
 
     try {
       const res = await axios.put(
-        "http://localhost:5000/api/change-password",
+        "https://gnapika-backend.onrender.com/api/change-password",
         {
           email,
           currentPassword,

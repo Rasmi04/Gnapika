@@ -32,7 +32,7 @@ const fetchTodos = async () => {
   );
 
   const res = await axios.get(
-    `http://localhost:5000/api/todos/${user.email}`
+    `https://gnapika-backend.onrender.com/api/todos/${user.email}`
   );
 
   setTodos(res.data);
@@ -45,7 +45,7 @@ const handleAddTodo = async () => {
   );
 
   await axios.post(
-    "http://localhost:5000/api/todos",
+    "https://gnapika-backend.onrender.com/api/todos",
     {
       task,
       userEmail: user.email,
@@ -101,7 +101,7 @@ const fetchTotalNotes = async () => {
     );
 
     const res = await axios.get(
-      `http://localhost:5000/api/notes/${user.email}`
+      `https://gnapika-backend.onrender.com/api/notes/${user.email}`
     );
 
     setTotalNotes(res.data.length);
@@ -116,7 +116,7 @@ const fetchUpcomingNotes = async () => {
     );
 
     const res = await axios.get(
-      `http://localhost:5000/api/notes/${user.email}`
+      `https://gnapika-backend.onrender.com/api/notes/${user.email}`
     );
     setNotes(res.data);
 
@@ -148,7 +148,7 @@ const fetchUpcomingNotes = async () => {
 const toggleTodo = async (id) => {
   try {
     await axios.put(
-      `http://localhost:5000/api/todos/${id}`
+      `https://gnapika-backend.onrender.com/api/todos/${id}`
     );
 
     fetchTodos();
